@@ -1,0 +1,23 @@
+{
+  "extends": "ts-config-single-spa",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "./dist",
+    "jsx": "react",
+    "declarationDir": "dist",
+    "target": "es6",
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "lib": ["dom", "es2015", "es2017"]
+  },
+  "files": ["src/redbee-styleguide.tsx"],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-styleguide
+spec:
+  selector:
+    matchLabels:
+      app: ui-styleguide
+  template:
+    metadata:
+      labels:
+        app: ui-styleguide
+    spec:
+      containers:
+        - name: ui-styleguide-storybook
+          image: ui-styleguide-storybook:0.1
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 81

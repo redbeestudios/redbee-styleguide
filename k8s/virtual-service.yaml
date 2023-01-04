@@ -1,0 +1,43 @@
+
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: ui-styleguide
+spec:
+  hosts:
+    - "prueba1.murmu.test"
+  gateways:
+    - test-gateway-1.default.cluster.local
+  http:
+    - match:
+        - uri:
+            prefix: "/storybook"
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: ui-styleguide
+            port:
+              number: 81
+    - match:
+        - uri:
+            prefix: "/styleguide/"
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: ui-styleguide
+            port:
+              number: 80
+      corsPolicy:
+        allowOrigins:
+          - regex: ".*"
+        allowMethods:
+          - POST
+          - GET
+          - PUT
+          - OPTIONS
+        allowHeaders:
+          - "*"
+        exposeHeaders:
+          - "*"
