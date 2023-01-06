@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export interface FlexProps {
-    column?:boolean
+  column?: boolean;
 }
 
 const Flex = styled.div<FlexProps>`
@@ -12,6 +12,5 @@ const Flex = styled.div<FlexProps>`
       flex-direction: column;
     `}
 `;
-
 
 export default Flex;

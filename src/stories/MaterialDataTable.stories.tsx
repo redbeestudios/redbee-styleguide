@@ -23,7 +23,7 @@ Primary.args = {
     {
       title: "Name",
       field: "name",
-      defaultSort: "desc"
+      defaultSort: "desc",
     },
     {
       title: "render",

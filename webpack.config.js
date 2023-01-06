@@ -1,10 +1,8 @@
-const path = require('path');
+const path = require("path");
 const { mergeWithRules } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
 
 module.exports = (webpackConfigEnv, argv) => {
-
-
   const defaultConfig = singleSpaDefaults({
     orgName: "redbee",
     projectName: "styleguide",
@@ -21,10 +19,10 @@ module.exports = (webpackConfigEnv, argv) => {
     },
   })(defaultConfig, {
     // customize the webpack config here
-    entry: './src/redbee-styleguide.tsx',
+    entry: "./src/redbee-styleguide.tsx",
     output: {
-      filename: 'redbee-styleguide.js',
-      path: path.resolve(__dirname, 'dist'),
+      filename: "redbee-styleguide.js",
+      path: path.resolve(__dirname, "dist"),
     },
     module: {
       rules: [
@@ -40,21 +38,19 @@ module.exports = (webpackConfigEnv, argv) => {
             "postcss-loader",
           ],
         },
-
       ],
     },
   });
-  config.module.rules.push( {
+  config.module.rules.push({
     test: /\.svg$/,
     use: [
       {
-        loader: '@svgr/webpack',
+        loader: "@svgr/webpack",
         options: {
           native: true,
         },
       },
     ],
   });
-return config;
-
+  return config;
 };

@@ -1,54 +1,51 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as S from './Chip.styles';
-import Span from '../texts/span/Span';
-import Icon from '../icon/Icon';
-const defaultProps ={
-    active:false,
-    disabled:false
+import React from "react";
+import PropTypes from "prop-types";
+import * as S from "./Chip.styles";
+import Span from "../texts/span/Span";
+import Icon from "../icon/Icon";
+const defaultProps = {
+  active: false,
+  disabled: false,
+};
 
-}
+export type ChipProps = {
+  text: string;
+  value?: string;
+  iconLeft?: string;
+  closeButton?: boolean;
+  disabled?: boolean;
+  active?: boolean;
+  onClickClose?: () => void;
+  onClick?: (value) => void;
+};
 
-export type ChipProps ={
-    text:string,
-    value?:string,
-    iconLeft?:string,
-    closeButton?:boolean,
-    disabled?:boolean,
-    active?:boolean,
-    onClickClose?:()=>void,
-    onClick?:(value)=>void
-}
+const Chip = (props: ChipProps) => {
+  const {
+    text,
+    value = text,
+    iconLeft,
+    closeButton,
+    onClickClose,
+    disabled,
+    active,
+    onClick,
+  } = props;
 
-
-const Chip =(props:ChipProps)=>{
-    const {
-        text,
-        value = text,
-        iconLeft,
-        closeButton,
-        onClickClose,
-        disabled,
-        active,
-        onClick,
-      } =props;
-
-
-      let state = disabled ? 'disabled' : active ? 'active' : 'default';
+  let state = disabled ? "disabled" : active ? "active" : "default";
 
   const renderIconLeft = () => {
     const states = {
       disabled: {
-        variant: 'neutral',
-        modifier: 'regular',
+        variant: "neutral",
+        modifier: "regular",
       },
       active: {
-        variant: 'secondary-1',
-        modifier: 'strong',
+        variant: "secondary-1",
+        modifier: "strong",
       },
       default: {
-        variant: 'neutral',
-        modifier: 'strong',
+        variant: "neutral",
+        modifier: "strong",
       },
     };
     return (
@@ -57,7 +54,7 @@ const Chip =(props:ChipProps)=>{
           name={iconLeft}
           variant={states[state].variant}
           modifier={states[state].modifier}
-          cursor='default'
+          cursor="default"
           width={24}
           height={24}
         />
@@ -68,26 +65,26 @@ const Chip =(props:ChipProps)=>{
   const renderIconClose = () => {
     let states = {
       disabled: {
-        variant: 'neutral',
-        modifier: 'regular',
-        cursor: 'not-allowed',
+        variant: "neutral",
+        modifier: "regular",
+        cursor: "not-allowed",
       },
       active: {
-        variant: 'secondary-1',
-        modifier: 'strong',
-        cursor: 'pointer',
+        variant: "secondary-1",
+        modifier: "strong",
+        cursor: "pointer",
       },
       default: {
-        variant: 'neutral',
-        modifier: 'strong',
-        cursor: 'pointer',
+        variant: "neutral",
+        modifier: "strong",
+        cursor: "pointer",
       },
     };
     return (
       <S.IconRight>
         <Icon
           variant={states[state].variant}
-          name='cancel_outline'
+          name="cancel_outline"
           modifier={states[state].modifier}
           width={24}
           height={24}
@@ -101,22 +98,22 @@ const Chip =(props:ChipProps)=>{
   const renderText = () => {
     const states = {
       disabled: {
-        variant: 'neutral',
-        modifier: 'regular',
+        variant: "neutral",
+        modifier: "regular",
       },
       active: {
-        variant: 'secondary-1',
-        modifier: 'strong',
+        variant: "secondary-1",
+        modifier: "strong",
       },
       default: {
-        variant: 'neutral',
-        modifier: 'strong',
+        variant: "neutral",
+        modifier: "strong",
       },
     };
     return (
       <S.TextWrapper>
         <Span
-          type='2'
+          type="2"
           variant={states[state].variant}
           modifier={states[state].modifier}
         >
@@ -139,8 +136,7 @@ const Chip =(props:ChipProps)=>{
       {closeButton && renderIconClose()}
     </S.Chip>
   );
-
-}
+};
 
 Chip.defaultProps = defaultProps;
 

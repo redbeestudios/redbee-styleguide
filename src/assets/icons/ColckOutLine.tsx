@@ -19,4 +19,3 @@ const SvgClockOutline = (props) => (
   </svg>
 );
 export default SvgClockOutline;
-
