@@ -89,10 +89,6 @@
     "@storybook/react": {
       "fast-glob": "3.2.12"
     },
-    "@storybook/addon-essentials": {
-      "remark-mdx": "2.2.1",
-      "remark-parse": "10.0.1"
-    },
     "react-svg-loader":{
       "css-select": "5.1.0"
     },

@@ -161,7 +161,7 @@ import giftOutline from '../../assets/icons/gift_outline.svg';
 import globeOutline from '../../assets/icons/globe_outline.svg';
 import googlePlayOutline from '../../assets/icons/google_play_outline.svg';
 import graphOutline from '../../assets/icons/graph_outline.svg';
-import gridLayoutOutline from '../../assets/icons/grid_layout_outline.svg';
+import {gridLayoutOutline} from '../../assets/icons/Grid';
 import gunOutline from '../../assets/icons/gun_outline.svg';
 import hammerOutline from '../../assets/icons/hammer_outline.svg';
 import handSlashOutline from '../../assets/icons/hand_slash_outline.svg';
