@@ -1,5 +1,6 @@
 .gitignore
 .prettierignore
+.github
 yarn.lock
 yarn-error.log
 package-lock.json
@@ -10,3 +11,4 @@ pnpm-lock.yaml
 src/stories
 docs
 src/assets/styles/_textStyles.tsx
+storybook-static
