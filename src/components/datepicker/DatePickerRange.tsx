@@ -1,8 +1,8 @@
-import DatePickerContainer from "./DatePickerContainer";
-import MonthPicker from "./monthpicker/Contaniner.inner";
-import DayPicker from "./daypicker/Container.inner";
-import React from "react";
-import { DatePickerProps } from "./DatePicker";
+import DatePickerContainer from './DatePickerContainer';
+import MonthPicker from './monthpicker/Contaniner.inner';
+import DayPicker from './daypicker/Container.inner';
+import React from 'react';
+import { DatePickerProps } from './DatePicker';
 
 const DateRangePicker = (props: DatePickerProps) => {
   const {
@@ -21,7 +21,7 @@ const DateRangePicker = (props: DatePickerProps) => {
         {...props}
         filterAlternatives={filterAlternatives}
         setCurrentFilterAlternative={setCurrentFilterAlternative}
-        dateFormat="LLL"
+        dateFormat='LLL'
         numberOfMonths={monthsShown}
         range
       >

@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import * as S from "./P.styles";
+import * as S from './P.styles';
 
 type Props = {
-  align: "center" | "right" | "left";
-  font: "primary" | "secondary";
-  type: "1" | "2" | "3" | "4" | "5" | "6";
+  align: 'center' | 'right' | 'left';
+  font: 'primary' | 'secondary';
+  type: '1' | '2' | '3' | '4' | '5' | '6';
   variant:
-    | "primary"
-    | "secondary-1"
-    | "secondary-2"
-    | "secondary-3"
-    | "neutral"
-    | "neutral-1"
-    | "danger"
-    | "warning"
-    | "info"
-    | "success";
-  weight: "regular" | "bold";
-  modifier: "regular" | "strong" | "weak" | "inverted";
+    | 'primary'
+    | 'secondary-1'
+    | 'secondary-2'
+    | 'secondary-3'
+    | 'neutral'
+    | 'neutral-1'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'success';
+  weight: 'regular' | 'bold';
+  modifier: 'regular' | 'strong' | 'weak' | 'inverted';
   children: any;
 };
 
@@ -32,7 +32,7 @@ const P = (props: Props) => {
       variant={variant}
       weight={weight}
       modifier={modifier}
-      as="p"
+      as='p'
     >
       {children}
     </S.P>
@@ -40,12 +40,12 @@ const P = (props: Props) => {
 };
 
 P.defaultProps = {
-  align: "left",
-  font: "primary",
-  type: "1",
-  variant: "primary",
-  weight: "regular",
-  modifier: "regular",
+  align: 'left',
+  font: 'primary',
+  type: '1',
+  variant: 'primary',
+  weight: 'regular',
+  modifier: 'regular',
 };
 
 export default P;

@@ -1,14 +1,14 @@
-import React from "react";
-import * as S from "./Button.styles";
-import Icon from "../icon/Icon";
+import React from 'react';
+import * as S from './Button.styles';
+import Icon from '../icon/Icon';
 
 const defaultProps = {
-  variant: "primary" as "primary" | "secondary",
-  size: "lg" as "sm" | "md" | "lg",
+  variant: 'primary' as 'primary' | 'secondary',
+  size: 'lg' as 'sm' | 'md' | 'lg',
   disabled: false,
   animated: false,
-  iconAlign: "none" as "center" | "left" | "right" | "none",
-  type: "button" as "button" | "reset" | "submit",
+  iconAlign: 'none' as 'center' | 'left' | 'right' | 'none',
+  type: 'button' as 'button' | 'reset' | 'submit',
 };
 
 type ButtonProps = {
@@ -39,13 +39,13 @@ const Button = (props: ButtonProps) => {
       sm: 20,
       md: 24,
       lg: 28,
-      "full-md": 20,
+      'full-md': 20,
     };
 
     return (
       <Icon
-        cursor={disabled ? "not-allowed" : "pointer"}
-        variant={variant === "primary" ? "neutral" : "primary"}
+        cursor={disabled ? 'not-allowed' : 'pointer'}
+        variant={variant === 'primary' ? 'neutral' : 'primary'}
         name={icon}
         width={iconSizes[size]}
         height={iconSizes[size]}
@@ -66,9 +66,9 @@ const Button = (props: ButtonProps) => {
       icon={icon}
       iconAlign={iconAlign}
     >
-      {icon && (iconAlign === "left" || iconAlign === "center") && renderIcon()}
+      {icon && (iconAlign === 'left' || iconAlign === 'center') && renderIcon()}
       {children}
-      {icon && iconAlign === "right" && renderIcon()}
+      {icon && iconAlign === 'right' && renderIcon()}
     </S.Button>
   );
 };

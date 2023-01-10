@@ -1,16 +1,16 @@
-import { format } from "date-fns";
-import React, { useEffect, useRef, useState } from "react";
-import Button from "../button/Button";
-import Link from "../link/Link";
+import { format } from 'date-fns';
+import React, { useEffect, useRef, useState } from 'react';
+import Button from '../button/Button';
+import Link from '../link/Link';
 
-import { RangeInput } from "../input/Input";
-import OutsideAlerter from "../outsidealerter/OutsideAlerter";
+import { RangeInput } from '../input/Input';
+import OutsideAlerter from '../outsidealerter/OutsideAlerter';
 
-import es from "date-fns/locale/es";
-import SelectableChips from "../selectablechips/SelectableChips";
-import H from "../texts/h/H";
-import * as S from "./DatePicker.styles";
-import { FilterAlternativeProps } from "./DatePicker";
+import es from 'date-fns/locale/es';
+import SelectableChips from '../selectablechips/SelectableChips';
+import H from '../texts/h/H';
+import * as S from './DatePicker.styles';
+import { FilterAlternativeProps } from './DatePicker';
 
 const RESET_VALUE = [null, null];
 
@@ -18,8 +18,8 @@ const getInitialValue = (range, value) =>
   value ? (range ? value : [value]) : [];
 
 const defaultProps = {
-  dateFormat: "dd/MM/yyyy",
-  outputFormat: "dd-MM-yyyy",
+  dateFormat: 'dd/MM/yyyy',
+  outputFormat: 'dd-MM-yyyy',
 };
 
 type DatePickerProps = {
@@ -100,11 +100,11 @@ const DatePicker = (props: DatePickerProps) => {
   };
 
   const startFormatted = startDate
-    ? `${format(startDate, dateFormat, { locale: es })}${range ? " - " : ""}`
-    : "";
+    ? `${format(startDate, dateFormat, { locale: es })}${range ? ' - ' : ''}`
+    : '';
   const endFormatted = endDate
     ? format(endDate, dateFormat, { locale: es })
-    : "";
+    : '';
 
   const handleSelected = (filterAlternatives) =>
     filterAlternatives.map((item) =>
@@ -114,14 +114,14 @@ const DatePicker = (props: DatePickerProps) => {
     );
 
   const filtersAlternativesRender = () => (
-    <S.DatePickerOptions data-testid="datepicker-filter-alternatives">
-      <H type="6" align="left" variant="neutral">
+    <S.DatePickerOptions data-testid='datepicker-filter-alternatives'>
+      <H type='6' align='left' variant='neutral'>
         Seleccioná tipo de fecha
       </H>
 
       <SelectableChips
         options={handleSelected(filterAlternatives)}
-        direction="column"
+        direction='column'
         onChange={(list) => {
           setValue(RESET_VALUE);
           setCurrentFilterAlternative(list.filter((item) => item.active)[0].id);
@@ -133,18 +133,18 @@ const DatePicker = (props: DatePickerProps) => {
     <>
       <OutsideAlerter
         handleOutSideClick={handleCancel}
-        exclude={["#daterange-picker"]}
+        exclude={['#daterange-picker']}
         active={open}
       >
         <RangeInput
           from={capitalize(startFormatted)}
           to={capitalize(endFormatted)}
-          placeHolder={"Desde - Hasta"}
+          placeHolder={'Desde - Hasta'}
           label={props.label}
           onClick={() => setOpen(true)}
           inputRef={inputEl}
           icons={{
-            iconRight: "calendar_outline",
+            iconRight: 'calendar_outline',
           }}
           disabled={disabled}
         />
@@ -165,18 +165,18 @@ const DatePicker = (props: DatePickerProps) => {
                   numberOfMonths={numberOfMonths}
                 >
                   <S.DatePickerButtons>
-                    <Link variant="primary" size="sm" onClick={handleReset}>
+                    <Link variant='primary' size='sm' onClick={handleReset}>
                       Limpiar
                     </Link>
                     <S.DatePickerButtonsRight>
                       <Button
-                        variant="secondary"
-                        size="sm"
+                        variant='secondary'
+                        size='sm'
                         onClick={handleCancel}
                       >
                         Cancelar
                       </Button>
-                      <Button variant="primary" size="sm" onClick={handleApply}>
+                      <Button variant='primary' size='sm' onClick={handleApply}>
                         Aplicar
                       </Button>
                     </S.DatePickerButtonsRight>
@@ -203,10 +203,10 @@ const DatePickerContainerPortal = ({ children, target }) => {
   const handleScroll = () => setTargetProps(getTargetProps());
 
   useEffect(() => {
-    targetContainer.addEventListener("scroll", handleScroll);
+    targetContainer.addEventListener('scroll', handleScroll);
 
     return () => {
-      targetContainer.removeEventListener("scroll", handleScroll);
+      targetContainer.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -217,7 +217,7 @@ const isScrollable = function (ele) {
   const hasScrollableContent = ele.scrollHeight > ele.clientHeight;
 
   const overflowYStyle = window.getComputedStyle(ele).overflowY;
-  const isOverflowHidden = overflowYStyle.indexOf("hidden") !== -1;
+  const isOverflowHidden = overflowYStyle.indexOf('hidden') !== -1;
 
   return hasScrollableContent && !isOverflowHidden;
 };

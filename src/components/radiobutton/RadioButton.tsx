@@ -1,6 +1,6 @@
-import React from "react";
-import Label from "../texts/label/Label";
-import * as S from "./RadioButton.styles";
+import React from 'react';
+import Label from '../texts/label/Label';
+import * as S from './RadioButton.styles';
 
 type RadioButtonProps = {
   id?: string;
@@ -11,8 +11,8 @@ type RadioButtonProps = {
   checked?: boolean;
   border?: boolean;
   disabled?: boolean;
-  align?: "right" | "left";
-  status?: "normal" | "error";
+  align?: 'right' | 'left';
+  status?: 'normal' | 'error';
 };
 
 const RadioButton = (props: RadioButtonProps) => {
@@ -41,7 +41,7 @@ const RadioButton = (props: RadioButtonProps) => {
     <>
       <S.RadioButton border={border} disabled={disabled} align={align}>
         <S.InputRadioTag
-          type="radio"
+          type='radio'
           id={id}
           name={name}
           value={value}
@@ -51,20 +51,20 @@ const RadioButton = (props: RadioButtonProps) => {
           border={border}
           status={status}
         />
-        {align === "left" && renderMark}
+        {align === 'left' && renderMark}
         <Label
           id={id}
-          type="2"
-          variant="neutral"
-          modifier={disabled ? "regular" : "strong"}
+          type='2'
+          variant='neutral'
+          modifier={disabled ? 'regular' : 'strong'}
         >
           {label}
         </Label>
-        {align === "right" && renderMark}
+        {align === 'right' && renderMark}
         <S.RadioBorder
           htmlFor={id}
           border={border}
-          data-testid="radio-border-data-test-id"
+          data-testid='radio-border-data-test-id'
           disabled={disabled}
           status={status}
         />
@@ -74,8 +74,8 @@ const RadioButton = (props: RadioButtonProps) => {
 };
 
 RadioButton.defaultProps = {
-  align: "left",
-  status: "normal",
+  align: 'left',
+  status: 'normal',
   border: false,
   disabled: false,
 };

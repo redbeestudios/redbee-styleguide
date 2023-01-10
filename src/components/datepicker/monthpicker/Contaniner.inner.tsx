@@ -3,25 +3,25 @@ import {
   START_DATE,
   useDatepicker,
   useMonth,
-} from "@datepicker-react/hooks";
-import { startOfYear } from "date-fns";
-import { es } from "date-fns/locale";
-import React, { useState } from "react";
-import P from "../../texts/p/P";
-import DatePickerContextInner from "../DatePickerContext.inner";
-import Month from "./Month.inner";
-import Icon from "../../icon/Icon";
-import * as S from "../DatePicker.styles";
+} from '@datepicker-react/hooks';
+import { startOfYear } from 'date-fns';
+import { es } from 'date-fns/locale';
+import React, { useState } from 'react';
+import P from '../../texts/p/P';
+import DatePickerContextInner from '../DatePickerContext.inner';
+import Month from './Month.inner';
+import Icon from '../../icon/Icon';
+import * as S from '../DatePicker.styles';
 
 const months = [...Array(12).keys()].map((e, index) =>
-  es.localize.month(index, { width: "abbreviated" })
+  es.localize.month(index, { width: 'abbreviated' })
 );
 
 const isStartOrEndOfRowGrid = (index) => {
   if (index === 1) return false;
   const rest = (index + 1) % 3;
-  if (index === 0 || rest === 1) return "startRowGrid";
-  if (index === 2 || rest === 0) return "endRowGrid";
+  if (index === 0 || rest === 1) return 'startRowGrid';
+  if (index === 2 || rest === 0) return 'endRowGrid';
   return false;
 };
 
@@ -66,7 +66,7 @@ const MonthlyContainer = (props: MonthlyProps) => {
     firstDayOfWeek,
   });
 
-  const year = monthLabel.split(" ")[1];
+  const year = monthLabel.split(' ')[1];
 
   return (
     <DatePickerContextInner.Provider
@@ -78,16 +78,16 @@ const MonthlyContainer = (props: MonthlyProps) => {
     >
       <S.NavButton onClick={() => goToPreviousMonths()}>
         <Icon
-          name="chevron_left_outline"
+          name='chevron_left_outline'
           height={20}
           width={20}
-          cursor="pointer"
+          cursor='pointer'
         />
       </S.NavButton>
       <S.DatePickerBody>
         <S.DatePickerGrid>
           <S.DatePickerHeader>
-            <P type="4" variant="primary" modifier="strong" align="center">
+            <P type='4' variant='primary' modifier='strong' align='center'>
               {year}
             </P>
           </S.DatePickerHeader>
@@ -105,10 +105,10 @@ const MonthlyContainer = (props: MonthlyProps) => {
       </S.DatePickerBody>
       <S.NavButton onClick={() => goToNextMonths()}>
         <Icon
-          name="chevron_right_outline"
+          name='chevron_right_outline'
           height={20}
           width={20}
-          cursor="pointer"
+          cursor='pointer'
         />
       </S.NavButton>
     </DatePickerContextInner.Provider>

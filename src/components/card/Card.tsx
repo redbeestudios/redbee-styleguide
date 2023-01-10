@@ -1,27 +1,27 @@
-import React from "react";
-import * as S from "./Card.styles";
+import React from 'react';
+import * as S from './Card.styles';
 type SpacingType =
-  | "0"
-  | "1"
-  | "2"
-  | "3"
-  | "4"
-  | "5"
-  | "6"
-  | "7"
-  | "8"
-  | "9"
-  | "10"
-  | "11";
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | '10'
+  | '11';
 
 type CardProps = {
   spacing?:
     | SpacingType
     | {
-        top: SpacingType;
-        left: SpacingType;
-        right: SpacingType;
-        bottom: SpacingType;
+        top?: SpacingType;
+        left?: SpacingType;
+        right?: SpacingType;
+        bottom?: SpacingType;
       };
   hasHover?: boolean;
   border?: boolean;
@@ -30,26 +30,26 @@ type CardProps = {
   borderRadius?:
     | boolean
     | {
-        topLeft: boolean;
-        topRight: boolean;
-        bottomLeft: boolean;
-        bottomRight: boolean;
+        topLeft?: boolean;
+        topRight?: boolean;
+        bottomLeft?: boolean;
+        bottomRight?: boolean;
       };
   onClick?: () => void;
-  variant: "neutral";
-  modifier: "regular" | "weak";
-  children: any;
+  variant: 'neutral';
+  modifier: 'regular' | 'weak';
+  children?: any;
 };
 
 const defaultProps = {
-  spacing: "0",
+  spacing: '0',
   hasHover: false,
   border: false,
   disabled: false,
   pressed: false,
   borderRadius: true,
-  variant: "neutral",
-  modifier: "weak",
+  variant: 'neutral',
+  modifier: 'weak',
 };
 const Card = (props: CardProps) => {
   const {

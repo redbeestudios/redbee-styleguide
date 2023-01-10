@@ -1,9 +1,9 @@
-import { useDay } from "@datepicker-react/hooks";
-import React, { useContext, useRef } from "react";
-import Span from "../../texts/span/Span";
-import DatePickerContext from "../DatePickerContext.inner";
-import { getColor } from "../DatePickerUtils.inner";
-import * as S from "../DatePicker.styles";
+import { useDay } from '@datepicker-react/hooks';
+import React, { useContext, useRef } from 'react';
+import Span from '../../texts/span/Span';
+import DatePickerContext from '../DatePickerContext.inner';
+import { getColor } from '../DatePickerUtils.inner';
+import * as S from '../DatePicker.styles';
 
 type MonthProps = {
   label: string;
@@ -58,7 +58,7 @@ function Month(props: MonthProps) {
         onKeyDown={onKeyDown}
         onMouseEnter={onMouseEnter}
         tabIndex={tabIndex}
-        type="button"
+        type='button'
         ref={dayRef}
         variant={buttonVariant}
         isStartOrEndOfRowGrid={isStartOrEndOfRowGrid}

@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import OutsideAlerter from "../outsidealerter/OutsideAlerter";
-import Button from "../button/Button";
+import React, { useState } from 'react';
+import OutsideAlerter from '../outsidealerter/OutsideAlerter';
+import Button from '../button/Button';
 
 import {
   DropdownWrapper,
   Element,
   ElementButton,
   Elements,
-} from "./DropDown.styles";
+} from './DropDown.styles';
 
-import Span from "../texts/span/Span";
+import Span from '../texts/span/Span';
 
 const defaultProps = {
   disabled: false,
 };
 
-type ItemProp = {
+export type ItemProp = {
   title: string;
-  disabled: boolean;
+  disabled?: boolean;
   action: () => void;
 };
 
 type DropDownProps = {
   disabled?: boolean;
   items?: Array<ItemProp>;
-  size?: "sm" | "md" | "lg";
+  size?: 'sm' | 'md' | 'lg';
   title?: string;
   children?: any;
 };
@@ -39,14 +39,14 @@ const DropDown = (props: DropDownProps) => {
       ? items.map((item) => (
           <Element key={item.title}>
             <ElementButton
-              type="button"
+              type='button'
               onClick={() => callItemAction(item.action)}
               disabled={item.disabled}
             >
               <Span
-                variant="neutral"
-                modifier={item.disabled ? "weak" : "strong"}
-                type="2"
+                variant='neutral'
+                modifier={item.disabled ? 'weak' : 'strong'}
+                type='2'
               >
                 {item.title}
               </Span>
@@ -65,13 +65,13 @@ const DropDown = (props: DropDownProps) => {
     <OutsideAlerter handleOutSideClick={() => setOpen(false)} active={open}>
       <DropdownWrapper>
         <Button
-          variant={disabled ? "secondary" : "primary"}
+          variant={disabled ? 'secondary' : 'primary'}
           size={size}
-          type="button"
+          type='button'
           onClick={toggle}
           disabled={disabled}
-          icon={open ? "chevron_up_small" : "chevron_down_small"}
-          iconAlign="right"
+          icon={open ? 'chevron_up_small' : 'chevron_down_small'}
+          iconAlign='right'
         >
           {title}
         </Button>

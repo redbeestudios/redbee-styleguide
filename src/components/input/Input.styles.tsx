@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
-import theme from "../../assets/styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../assets/styles/theme';
 
 export interface InputProps {
   id?: string;
   name?: string;
   value?: string;
   label?: string;
-  type?: "text" | "number" | "password" | "check" | "email";
-  size?: "sm" | "md" | "lg";
-  status?: "normal" | "error";
+  type?: 'text' | 'number' | 'password' | 'check' | 'email';
+  size?: 'sm' | 'md' | 'lg';
+  status?: 'normal' | 'error';
   readOnly?: boolean;
   placeholder?: string;
   onChange?: (e) => any;
@@ -40,26 +40,26 @@ export const Input = styled.div`
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
-    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition: 'color 9999s ease-out, background-color 9999s ease-out';
     -webkit-transition-delay: 9999s;
   }
 `;
 
 export const LabelWrapper = styled.div`
-  padding: ${theme.spacing["spacing-1"]} ${theme.spacing["spacing-1"]}
-    ${theme.spacing["spacing-1"]} ${theme.spacing["spacing-3"]};
+  padding: ${theme.spacing['spacing-1']} ${theme.spacing['spacing-1']}
+    ${theme.spacing['spacing-1']} ${theme.spacing['spacing-3']};
   display: flex;
 `;
 
 export const BaseInput = styled.div<InputProps>`
   background-color: ${theme.colors.neutral.bg.regular};
-  border-radius: ${theme.borderRadius["border-radius-3"]};
-  padding: ${theme.spacing["spacing-2"]} ${theme.spacing["spacing-2"]}
-    ${theme.spacing["spacing-2"]} ${theme.spacing["spacing-3"]};
+  border-radius: ${theme.borderRadius['border-radius-3']};
+  padding: ${theme.spacing['spacing-2']} ${theme.spacing['spacing-2']}
+    ${theme.spacing['spacing-2']} ${theme.spacing['spacing-3']};
   display: flex;
   align-items: center;
   width: 100%;
-  ${theme.textStyles["text-preset-9"]};
+  ${theme.textStyles['text-preset-9']};
 
   &:focus,
   &:focus-visible {
@@ -76,44 +76,44 @@ export const BaseInput = styled.div<InputProps>`
   ${({ hasFocus }) =>
     css`
       box-shadow: inset 0 0 0 1px
-        ${theme.colors[`${hasFocus ? "secondary-1" : "neutral"}`].border
+        ${theme.colors[`${hasFocus ? 'secondary-1' : 'neutral'}`].border
           .regular};
       input {
-        caret-color: ${theme.colors["secondary-1"].border.regular};
+        caret-color: ${theme.colors['secondary-1'].border.regular};
       }
     `}
   ${({ status }) =>
-    status === "error" &&
+    status === 'error' &&
     css`
-      box-shadow: inset 0 0 0 1px ${theme.colors["danger"].border.regular};
+      box-shadow: inset 0 0 0 1px ${theme.colors['danger'].border.regular};
       input {
-        caret-color: ${theme.colors["danger"].border.regular};
+        caret-color: ${theme.colors['danger'].border.regular};
       }
     `}
   ${({ disabled }) =>
     disabled === true &&
     css`
       input {
-        color: ${theme.colors["neutral"].text.regular};
-        background-color: ${theme.colors["neutral"].bg.regular};
+        color: ${theme.colors['neutral'].text.regular};
+        background-color: ${theme.colors['neutral'].bg.regular};
       }
-      box-shadow: inset 0 0 0 1px ${theme.colors["neutral"].border.regular};
-      background-color: ${theme.colors["neutral"].bg.regular};
+      box-shadow: inset 0 0 0 1px ${theme.colors['neutral'].border.regular};
+      background-color: ${theme.colors['neutral'].bg.regular};
       &:hover,
       &:focus {
-        box-shadow: inset 0 0 0 1px ${theme.colors["neutral"].border.regular};
+        box-shadow: inset 0 0 0 1px ${theme.colors['neutral'].border.regular};
       }
     `}
   ${({ readOnly }) =>
     readOnly === true &&
     css`
-      box-shadow: inset 0 0 0 1px ${theme.colors["neutral"].border.weak};
+      box-shadow: inset 0 0 0 1px ${theme.colors['neutral'].border.weak};
       input {
-        color: ${theme.colors["neutral"].text.regular};
+        color: ${theme.colors['neutral'].text.regular};
       }
       &:hover,
       &:focus {
-        box-shadow: inset 0 0 0 1px ${theme.colors["neutral"].border.weak};
+        box-shadow: inset 0 0 0 1px ${theme.colors['neutral'].border.weak};
       }
     `}
   ${({ onlyNumbers }) =>
@@ -125,7 +125,7 @@ export const BaseInput = styled.div<InputProps>`
         margin: 0;
       }
 
-      input[type="number"] {
+      input[type='number'] {
         -moz-appearance: textfield;
       }
     `}
@@ -149,26 +149,26 @@ export const InputTag = styled.input`
   }
 
   * + & {
-    margin-left: ${theme.spacing["spacing-0"]};
+    margin-left: ${theme.spacing['spacing-0']};
   }
 
   & + * {
-    margin-left: ${theme.spacing["spacing-0"]};
+    margin-left: ${theme.spacing['spacing-0']};
   }
 `;
 
 export const HelpText = styled.div<InputProps>`
-  padding: ${theme.spacing["spacing-1"]} ${theme.spacing["spacing-1"]}
-    ${theme.spacing["spacing-1"]} ${theme.spacing["spacing-3"]};
+  padding: ${theme.spacing['spacing-1']} ${theme.spacing['spacing-1']}
+    ${theme.spacing['spacing-1']} ${theme.spacing['spacing-3']};
   display: flex;
   align-items: flex-start;
   position: absolute;
   ${({ status }) =>
-    status === "error" &&
+    status === 'error' &&
     css`
       > * {
         &:first-of-type {
-          margin-right: ${theme.spacing["spacing-1"]};
+          margin-right: ${theme.spacing['spacing-1']};
         }
       }
     `}
@@ -182,15 +182,15 @@ export const SiblingInputTag = styled.div`
 
 const getSize = (size) => {
   switch (size) {
-    case "sm":
+    case 'sm':
       return css`
         width: 215px;
       `;
-    case "md":
+    case 'md':
       return css`
         width: 325px;
       `;
-    case "lg":
+    case 'lg':
       return css`
         width: 560px;
       `;

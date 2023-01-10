@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Span from "../texts/span/Span";
-import Label from "../texts/label/Label";
-import Icon from "../icon/Icon";
-import * as S from "./TextArea.styles";
+import React, { useState } from 'react';
+import Span from '../texts/span/Span';
+import Label from '../texts/label/Label';
+import Icon from '../icon/Icon';
+import * as S from './TextArea.styles';
 
 type IconProps = {
   name: string;
@@ -15,7 +15,7 @@ type TextAreaProps = {
   value?: string;
   label?: string;
   maxLength?: number;
-  status?: "normal" | "error";
+  status?: 'normal' | 'error';
   readOnly?: boolean;
   placeHolder?: string;
   message?: string;
@@ -33,8 +33,8 @@ type TextAreaProps = {
 };
 
 const spanVariantByStatus = {
-  normal: "neutral",
-  error: "danger",
+  normal: 'neutral',
+  error: 'danger',
 };
 
 const TextArea = (props: TextAreaProps) => {
@@ -65,7 +65,7 @@ const TextArea = (props: TextAreaProps) => {
 
   const renderMaxLengthHelpText = () => (
     <S.SiblingTextArea>
-      <Span type="4" variant="neutral" modifier="regular">
+      <Span type='4' variant='neutral' modifier='regular'>
         {characterCount}/{maxLength}
       </Span>
     </S.SiblingTextArea>
@@ -75,13 +75,13 @@ const TextArea = (props: TextAreaProps) => {
     return (
       <>
         {disabled ? (
-          <Icon name={name} variant="primary" cursor={"not-allowed"} />
+          <Icon name={name} variant='primary' cursor={'not-allowed'} />
         ) : (
           <Icon
             name={name}
-            variant="primary"
-            cursor={callback ? "pointer" : "default"}
-            modifier="regular"
+            variant='primary'
+            cursor={callback ? 'pointer' : 'default'}
+            modifier='regular'
             onClick={() => callback && callback()}
           />
         )}
@@ -108,10 +108,10 @@ const TextArea = (props: TextAreaProps) => {
     <S.TextArea>
       {label && (
         <S.LabelWrapper>
-          <Label id={id} type="4">
+          <Label id={id} type='4'>
             {label}
             {required && (
-              <Span variant="danger" modifier="regular" type="4">
+              <Span variant='danger' modifier='regular' type='4'>
                 *
               </Span>
             )}
@@ -145,15 +145,15 @@ const TextArea = (props: TextAreaProps) => {
       </S.BaseTextArea>
       {message && (
         <S.HelpText status={status}>
-          {status === "error" && (
+          {status === 'error' && (
             <Icon
-              name="error_circle_outline"
-              variant="danger"
+              name='error_circle_outline'
+              variant='danger'
               width={16}
               height={16}
             />
           )}
-          <Span id={id} type="4" variant={spanVariantByStatus[status]}>
+          <Span id={id} type='4' variant={spanVariantByStatus[status]}>
             {message}
           </Span>
         </S.HelpText>
@@ -164,11 +164,11 @@ const TextArea = (props: TextAreaProps) => {
 };
 
 TextArea.defaultProps = {
-  status: "normal",
+  status: 'normal',
   readOnly: false,
   disabled: false,
   maxLengthHelpText: true,
-  maxLength: "120",
+  maxLength: '120',
 };
 
 export default TextArea;

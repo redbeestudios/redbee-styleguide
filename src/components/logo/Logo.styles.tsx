@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export interface LogoProps {
-  size?: "medium" | "small" | "large";
-  type?: "horizontal" | "vertical" | "isotype";
-  cursor?: "not-allowed" | "pinter" | "default" | "none";
-  variant?: "full" | "inverted" | "without";
+  size?: 'medium' | 'small' | 'large';
+  type?: 'horizontal' | 'vertical' | 'isotype';
+  cursor?: 'not-allowed' | 'pinter' | 'default' | 'none';
+  variant?: 'full' | 'inverted' | 'without';
   onClick?: () => void;
 }
 

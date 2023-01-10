@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import theme from "../../assets/styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../assets/styles/theme';
 
 interface MaterialDataTableProps {
   clickableRows?: boolean;
@@ -35,7 +35,7 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
       }
 
       td {
-        padding: ${theme.spacing["spacing-7"]};
+        padding: ${theme.spacing['spacing-7']};
         overflow-x: hidden !important;
       }
 
@@ -57,7 +57,7 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
 
   .headerClasses {
     th {
-      padding: ${theme.spacing["spacing-5"]};
+      padding: ${theme.spacing['spacing-5']};
       background-color: ${theme.colors.neutral.bg.weak};
     }
   }
@@ -80,8 +80,8 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
         }
   
         &:active {
-          background-color: ${theme.colors["secondary-1"].bg.weak} !important;
-          box-shadow: inset 0 -1px 0 ${theme.colors["secondary-1"].border.regular};
+          background-color: ${theme.colors['secondary-1'].bg.weak} !important;
+          box-shadow: inset 0 -1px 0 ${theme.colors['secondary-1'].border.regular};
         }`
           : `        
         &:hover {
@@ -92,10 +92,10 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
 
     td {
       vertical-align: middle;
-      padding-left: ${theme.spacing["spacing-5"]} !important;
-      padding-right: ${theme.spacing["spacing-5"]} !important;
+      padding-left: ${theme.spacing['spacing-5']} !important;
+      padding-right: ${theme.spacing['spacing-5']} !important;
 
-      ${theme.textStyles["text-preset-10"]()}
+      ${theme.textStyles['text-preset-10']()}
       &.react-bs-table-no-data {
         text-align: center;
       }
@@ -108,8 +108,8 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
-  padding: ${theme.spacing["spacing-6"]};
-  ${theme.textStyles["text-preset-10"]()};
+  padding: ${theme.spacing['spacing-6']};
+  ${theme.textStyles['text-preset-10']()};
 
   .pagination__total {
     text-align: center;
@@ -133,11 +133,11 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
       padding: 0px;
       height: 28px;
       width: 28px;
-      margin-right: ${theme.spacing["spacing-4"]};
+      margin-right: ${theme.spacing['spacing-4']};
 
       &:hover {
         background-color: ${theme.colors.neutral.bg.regular};
-        border-radius: ${theme.borderRadius["border-radius-5"]};
+        border-radius: ${theme.borderRadius['border-radius-5']};
 
         svg {
           path {
@@ -149,7 +149,7 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
       &:active {
         svg {
           path {
-            fill: ${theme.colors["secondary-1"].ic.strong};
+            fill: ${theme.colors['secondary-1'].ic.strong};
           }
         }
       }
@@ -164,12 +164,12 @@ export const MaterialDataTable = styled.div<MaterialDataTableProps>`
 
     .page--active {
       color: ${theme.colors.neutral.text.inverted};
-      background-color: ${theme.colors["secondary-1"].bg.regular};
-      border-radius: ${theme.borderRadius["border-radius-5"]};
+      background-color: ${theme.colors['secondary-1'].bg.regular};
+      border-radius: ${theme.borderRadius['border-radius-5']};
 
       &:hover {
         color: ${theme.colors.neutral.text.inverted};
-        background-color: ${theme.colors["secondary-1"].bg.strong};
+        background-color: ${theme.colors['secondary-1'].bg.strong};
       }
     }
 

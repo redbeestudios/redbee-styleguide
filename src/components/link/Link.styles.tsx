@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components";
-import theme from "../../assets/styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../assets/styles/theme';
 
 interface LinkProps {
-  size: "xs" | "sm" | "md";
-  variant: "primary" | "inverted";
+  size: 'xs' | 'sm' | 'md';
+  variant: 'primary' | 'inverted';
   icons: any;
 }
 
@@ -18,13 +18,13 @@ export const Link = styled.a<LinkProps>`
 
   ${({ icons }) => css`
     i {
-      margin-right: ${icons?.iconLeft ? theme.spacing["spacing-2"] : 0};
-      margin-left: ${icons?.iconRight ? theme.spacing["spacing-2"] : 0};
+      margin-right: ${icons?.iconLeft ? theme.spacing['spacing-2'] : 0};
+      margin-left: ${icons?.iconRight ? theme.spacing['spacing-2'] : 0};
 
       ${icons?.iconLeft &&
       icons?.iconRight &&
-      `&:first-of-type {margin-right: ${theme.spacing["spacing-2"]}; margin-left: 0;}
-       &:last-child {margin-right: 0; margin-left: ${theme.spacing["spacing-2"]};}`}
+      `&:first-of-type {margin-right: ${theme.spacing['spacing-2']}; margin-left: 0;}
+       &:last-child {margin-right: 0; margin-left: ${theme.spacing['spacing-2']};}`}
     }
   `};
 `;
@@ -36,7 +36,7 @@ export const HyperlinkContent = styled.div`
 
 const getVariant = (variant) => {
   switch (variant) {
-    case "primary":
+    case 'primary':
       return css`
         color: ${theme.colors.primary.text.weak};
 
@@ -56,14 +56,14 @@ const getVariant = (variant) => {
         }
         &:focus,
         &:active {
-          color: ${theme.colors["secondary-1"].text.strong};
+          color: ${theme.colors['secondary-1'].text.strong};
 
           svg path {
-            fill: ${theme.colors["secondary-1"].ic.strong};
+            fill: ${theme.colors['secondary-1'].ic.strong};
           }
         }
       `;
-    case "inverted":
+    case 'inverted':
       return css`
         color: ${theme.colors.neutral.text.inverted};
         &:not([href]) {
@@ -78,18 +78,18 @@ const getVariant = (variant) => {
 
 const getSize = (size) => {
   switch (size) {
-    case "xs":
+    case 'xs':
       return css`
-        ${theme.textStyles["text-preset-10"]};
+        ${theme.textStyles['text-preset-10']};
       `;
-    case "sm":
+    case 'sm':
       return css`
-        ${theme.textStyles["text-preset-9"]};
+        ${theme.textStyles['text-preset-9']};
       `;
 
-    case "md":
+    case 'md':
       return css`
-        ${theme.textStyles["text-preset-8"]};
+        ${theme.textStyles['text-preset-8']};
       `;
   }
 };

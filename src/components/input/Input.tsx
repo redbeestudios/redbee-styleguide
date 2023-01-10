@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import * as S from "./Input.styles";
-import Label from "../texts/label/Label";
-import Icon from "../icon/Icon";
-import Span from "../texts/span/Span";
+import React, { useState } from 'react';
+import * as S from './Input.styles';
+import Label from '../texts/label/Label';
+import Icon from '../icon/Icon';
+import Span from '../texts/span/Span';
 
 const spanVariantByStatus = {
-  normal: "neutral",
-  error: "danger",
+  normal: 'neutral',
+  error: 'danger',
 };
-type InputProps = {
+export type InputProps = {
   id?: string;
   name?: string;
   value?: string;
   label?: string;
-  type?: "text" | "number" | "password" | "check" | "email";
-  size?: "sm" | "md" | "lg";
-  inputStatus?: "normal" | "error";
+  type?: 'text' | 'number' | 'password' | 'check' | 'email';
+  size?: 'sm' | 'md' | 'lg';
+  inputStatus?: 'normal' | 'error';
   readOnly?: boolean;
   placeholder?: string;
   onChange?: (e) => any;
@@ -53,11 +53,11 @@ const Input = (props: InputProps) => {
   const [characterCount, setCharacterCount] = useState(0);
   const [innerValue, setInnerValue] = useState(props.value);
   const [inputType, setInputType] = useState(
-    props.onlyNumbers ? "text" : props.type
+    props.onlyNumbers ? 'text' : props.type
   );
 
   const handleShowPasswordClick = () => {
-    setInputType(!showPassword ? "text" : "password");
+    setInputType(!showPassword ? 'text' : 'password');
     setShowPassword(!showPassword);
   };
 
@@ -84,13 +84,13 @@ const Input = (props: InputProps) => {
     return (
       <>
         {props.disabled ? (
-          <Icon name={name} variant="neutral" cursor={"not-allowed"} />
+          <Icon name={name} variant='neutral' cursor={'not-allowed'} />
         ) : (
           <Icon
             name={name}
-            variant="neutral"
-            cursor={callback ? "pointer" : "default"}
-            modifier={align == "left" ? "weak" : "strong"}
+            variant='neutral'
+            cursor={callback ? 'pointer' : 'default'}
+            modifier={align == 'left' ? 'weak' : 'strong'}
             onClick={() => callback && callback()}
           />
         )}
@@ -100,23 +100,23 @@ const Input = (props: InputProps) => {
 
   const renderShowPasswordButton = () => (
     <>
-      {props.type === "password" && (
+      {props.type === 'password' && (
         <>
           {showPassword ? (
             <Icon
               onClick={handleShowPasswordClick}
-              name="view_outline"
-              variant="neutral"
-              cursor={props.disabled ? "not-allowed" : "pointer"}
-              modifier={props.disabled ? "regular" : "strong"}
+              name='view_outline'
+              variant='neutral'
+              cursor={props.disabled ? 'not-allowed' : 'pointer'}
+              modifier={props.disabled ? 'regular' : 'strong'}
             />
           ) : (
             <Icon
               onClick={handleShowPasswordClick}
-              name="hide_outline"
-              variant="neutral"
-              cursor={props.disabled ? "not-allowed" : "pointer"}
-              modifier={props.disabled ? "regular" : "strong"}
+              name='hide_outline'
+              variant='neutral'
+              cursor={props.disabled ? 'not-allowed' : 'pointer'}
+              modifier={props.disabled ? 'regular' : 'strong'}
             />
           )}
         </>
@@ -127,11 +127,11 @@ const Input = (props: InputProps) => {
   const renderMaxLengthHelpText = () => (
     <S.SiblingInputTag>
       <Span
-        font="primary"
-        type="2"
-        variant="neutral"
-        weight="regular"
-        modifier="regular"
+        font='primary'
+        type='2'
+        variant='neutral'
+        weight='regular'
+        modifier='regular'
       >
         {`${characterCount}/${props.maxLength}`}
       </Span>
@@ -142,7 +142,9 @@ const Input = (props: InputProps) => {
     <S.Input>
       {props.label && (
         <S.LabelWrapper>
-          <Label type={"4"}>{props.label}</Label>
+          <Label id={props.id} type={'4'}>
+            {props.label}
+          </Label>
         </S.LabelWrapper>
       )}
       <S.BaseInput
@@ -153,8 +155,9 @@ const Input = (props: InputProps) => {
         readOnly={props.readOnly}
         onlyNumbers={props.onlyNumbers}
       >
-        {props.icons?.iconLeft && renderIcon(props.icons.iconLeft, "left")}
+        {props.icons?.iconLeft && renderIcon(props.icons.iconLeft, 'left')}
         <S.InputTag
+          id={props.id}
           type={inputType}
           placeholder={props.placeHolder}
           onClick={props.onClick}
@@ -162,7 +165,7 @@ const Input = (props: InputProps) => {
           onBlur={proxyOnBlur}
           onFocus={proxyOnFocus}
           onKeyDown={props.onKeydown}
-          pattern={props.onlyNumbers ? "^[0-9]+$" : props.pattern}
+          pattern={props.onlyNumbers ? '^[0-9]+$' : props.pattern}
           value={props.onlyNumbers ? innerValue : props.value}
           disabled={props.disabled}
           readOnly={props.readOnly}
@@ -170,25 +173,26 @@ const Input = (props: InputProps) => {
           ref={props.inputRef}
           autoComplete={props.autocomplete}
         />
-        {props.icons?.iconRight && renderIcon(props.icons.iconRight, "right")}
+        {props.icons?.iconRight && renderIcon(props.icons.iconRight, 'right')}
         {props.showPasswordButton && renderShowPasswordButton()}
         {props.maxLengthHelpText && renderMaxLengthHelpText()}
       </S.BaseInput>
       {props.message && (
         <S.HelpText status={props.inputStatus}>
-          {props.inputStatus === "error" && (
+          {props.inputStatus === 'error' && (
             <Icon
-              name="error_circle_outline"
-              variant="danger"
+              name='error_circle_outline'
+              variant='danger'
               width={16}
               height={16}
             />
           )}
           <Span
-            font="primary"
-            modifier="regular"
-            type="4"
-            weight="regular"
+            id={props.id}
+            font='primary'
+            modifier='regular'
+            type='4'
+            weight='regular'
             variant={spanVariantByStatus[props.inputStatus]}
           >
             {props.message}

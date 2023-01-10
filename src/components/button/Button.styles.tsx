@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
-import theme from "../../assets/styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../assets/styles/theme';
 
 interface ButtonProps {
-  variant?: "primary" | "secondary";
-  size?: "sm" | "md" | "lg";
-  iconAlign?: "center" | "left" | "right" | "none";
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  iconAlign?: 'center' | 'left' | 'right' | 'none';
   fullwidth?: boolean;
   disabled?: boolean;
   icon;
@@ -41,49 +41,49 @@ export const Button = styled.button<ButtonProps>`
 //@ts-ignore
 const getVariant = (properties: ButtonProps) => {
   switch (properties.variant) {
-    case "primary":
+    case 'primary':
       return css`
-        background-color: ${theme.colors["primary"].bg.regular};
-        color: ${theme.colors["neutral"].text.inverted};
+        background-color: ${theme.colors['primary'].bg.regular};
+        color: ${theme.colors['neutral'].text.inverted};
 
         &:hover {
-          background-color: ${theme.colors["primary"].bg.strong};
+          background-color: ${theme.colors['primary'].bg.strong};
         }
 
         &:active {
-          background-color: ${theme.colors["secondary-1"].bg.regular};
+          background-color: ${theme.colors['secondary-1'].bg.regular};
         }
 
         ${(props) =>
           properties.disabled &&
           `
-            background-color: ${theme.colors["neutral"].bg.stronger};
-            color: ${theme.colors["neutral"].text.regular};
+            background-color: ${theme.colors['neutral'].bg.stronger};
+            color: ${theme.colors['neutral'].text.regular};
           `}
       `;
 
-    case "secondary":
+    case 'secondary':
       return css`
         background-color: transparent;
-        box-shadow: inset 0 0 0 2px ${theme.colors["primary"].border.regular};
-        color: ${theme.colors["primary"].text.regular};
+        box-shadow: inset 0 0 0 2px ${theme.colors['primary'].border.regular};
+        color: ${theme.colors['primary'].text.regular};
 
         &:hover {
-          background-color: ${theme.colors["primary"].bg.weak};
-          box-shadow: inset 0 0 0 2px ${theme.colors["primary"].border.strong};
+          background-color: ${theme.colors['primary'].bg.weak};
+          box-shadow: inset 0 0 0 2px ${theme.colors['primary'].border.strong};
         }
 
         &:active {
-          background-color: ${theme.colors["secondary-1"].bg.weak};
+          background-color: ${theme.colors['secondary-1'].bg.weak};
           box-shadow: inset 0 0 0 2px
-            ${theme.colors["secondary-1"].border.strong};
+            ${theme.colors['secondary-1'].border.strong};
         }
 
         ${(props) =>
           properties.disabled &&
           css`
-            box-shadow: inset 0 0 0 2px ${theme.colors["neutral"].border.strong};
-            color: ${theme.colors["neutral"].text.regular};
+            box-shadow: inset 0 0 0 2px ${theme.colors['neutral'].border.strong};
+            color: ${theme.colors['neutral'].text.regular};
           `}
       `;
   }
@@ -91,25 +91,25 @@ const getVariant = (properties: ButtonProps) => {
 
 const getSize = (size) => {
   switch (size) {
-    case "sm":
+    case 'sm':
       return css`
-        border-radius: ${theme.borderRadius["border-radius-3"]};
-        ${theme.textStyles["text-preset-7"]};
+        border-radius: ${theme.borderRadius['border-radius-3']};
+        ${theme.textStyles['text-preset-7']};
       `;
-    case "md":
+    case 'md':
       return css`
-        border-radius: ${theme.borderRadius["border-radius-3"]};
-        ${theme.textStyles["text-preset-6"]};
+        border-radius: ${theme.borderRadius['border-radius-3']};
+        ${theme.textStyles['text-preset-6']};
       `;
-    case "lg":
+    case 'lg':
       return css`
-        border-radius: ${theme.borderRadius["border-radius-3"]};
-        ${theme.textStyles["text-preset-5"]};
+        border-radius: ${theme.borderRadius['border-radius-3']};
+        ${theme.textStyles['text-preset-5']};
       `;
-    case "md-full":
+    case 'md-full':
       return css`
-        border-radius: ${theme.borderRadius["border-radius-3"]};
-        ${theme.textStyles["text-preset-6"]};
+        border-radius: ${theme.borderRadius['border-radius-3']};
+        ${theme.textStyles['text-preset-6']};
         ${getFullWidth()}
       `;
   }
@@ -119,52 +119,52 @@ const getPadding = (size, iconAlign) => {
   const paddingsBySize = {
     sm: {
       none: `
-        ${theme.spacing["spacing-0"]}
-        ${theme.spacing["spacing-2"]}`,
+        ${theme.spacing['spacing-0']}
+        ${theme.spacing['spacing-2']}`,
       left: `
-        ${theme.spacing["spacing-0"]}
-        ${theme.spacing["spacing-2"]}`,
+        ${theme.spacing['spacing-0']}
+        ${theme.spacing['spacing-2']}`,
       right: `
-        ${theme.spacing["spacing-0"]}
-        ${theme.spacing["spacing-2"]}`,
-      center: `${theme.spacing["spacing-0"]}`,
+        ${theme.spacing['spacing-0']}
+        ${theme.spacing['spacing-2']}`,
+      center: `${theme.spacing['spacing-0']}`,
     },
     md: {
       none: `
-        ${theme.spacing["spacing-1"]}
-        ${theme.spacing["spacing-3"]}`,
+        ${theme.spacing['spacing-1']}
+        ${theme.spacing['spacing-3']}`,
       left: `
-        ${theme.spacing["spacing-1"]}
-        ${theme.spacing["spacing-3"]}`,
+        ${theme.spacing['spacing-1']}
+        ${theme.spacing['spacing-3']}`,
       right: `
-        ${theme.spacing["spacing-1"]}
-        ${theme.spacing["spacing-3"]}`,
-      center: `${theme.spacing["spacing-1"]}`,
+        ${theme.spacing['spacing-1']}
+        ${theme.spacing['spacing-3']}`,
+      center: `${theme.spacing['spacing-1']}`,
     },
     lg: {
       none: `
-          ${theme.spacing["spacing-3"]}
-          ${theme.spacing["spacing-4"]}`,
+          ${theme.spacing['spacing-3']}
+          ${theme.spacing['spacing-4']}`,
       left: `
-          ${theme.spacing["spacing-3"]}
-          ${theme.spacing["spacing-4"]}`,
+          ${theme.spacing['spacing-3']}
+          ${theme.spacing['spacing-4']}`,
       right: `
-          ${theme.spacing["spacing-3"]}
-          ${theme.spacing["spacing-4"]}`,
-      center: `${theme.spacing["spacing-3"]}`,
+          ${theme.spacing['spacing-3']}
+          ${theme.spacing['spacing-4']}`,
+      center: `${theme.spacing['spacing-3']}`,
     },
-    "md-full": {
-      none: `${theme.spacing["spacing-4"]}`,
-      left: `${theme.spacing["spacing-4"]}`,
-      right: `${theme.spacing["spacing-4"]}`,
-      center: `${theme.spacing["spacing-4"]}`,
+    'md-full': {
+      none: `${theme.spacing['spacing-4']}`,
+      left: `${theme.spacing['spacing-4']}`,
+      right: `${theme.spacing['spacing-4']}`,
+      center: `${theme.spacing['spacing-4']}`,
     },
   };
 
   return css`
     padding: ${paddingsBySize[size][iconAlign]};
-    ${iconAlign === "center" &&
-    size !== "md-full" &&
+    ${iconAlign === 'center' &&
+    size !== 'md-full' &&
     `
           display: flex;
           justify-content: center;
@@ -172,8 +172,8 @@ const getPadding = (size, iconAlign) => {
         `}
 
     i {
-      margin-right: ${iconAlign === "left" ? theme.spacing["spacing-3"] : 0};
-      margin-left: ${iconAlign === "right" ? theme.spacing["spacing-3"] : 0};
+      margin-right: ${iconAlign === 'left' ? theme.spacing['spacing-3'] : 0};
+      margin-left: ${iconAlign === 'right' ? theme.spacing['spacing-3'] : 0};
     }
   `;
 };

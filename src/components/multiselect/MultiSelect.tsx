@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
-import OutsideAlerter from "../outsidealerter/OutsideAlerter";
-import Link from "../link/Link";
-import Input from "../input/Input";
+import React, { useEffect, useState, useRef } from 'react';
+import OutsideAlerter from '../outsidealerter/OutsideAlerter';
+import Link from '../link/Link';
+import Input from '../input/Input';
 
-import MultiSelectMenu from "./MultiSelectMenu.inner";
-import * as S from "./MultiSelect.styles";
-import { OptionProps } from "./MultiSelectOption.Inner";
+import MultiSelectMenu from './MultiSelectMenu.inner';
+import * as S from './MultiSelect.styles';
+import { OptionProps } from './MultiSelectOption.Inner';
 
-const OPTION_ALL = { label: "Todas", value: "TODAS" };
+const OPTION_ALL = { label: 'Todas', value: 'TODAS' };
 
 type MultiSelectProps = {
   defaultValue: Array<OptionProps>;
@@ -16,7 +16,7 @@ type MultiSelectProps = {
   disabled: boolean;
   onChange: (value) => void;
   label: string;
-  status: "normal" | "error";
+  status: 'normal' | 'error';
   message: string;
   placeHolder: string;
   showResetButton: boolean;
@@ -25,12 +25,12 @@ type MultiSelectProps = {
 
 const defaultProps = {
   options: [],
-  placeHolder: "",
-  noOptionsMessage: "",
+  placeHolder: '',
+  noOptionsMessage: '',
   defaultValue: [],
   showResetButton: false,
   disabled: false,
-  status: "normal",
+  status: 'normal',
 };
 const MultiSelect = (props: MultiSelectProps) => {
   const {
@@ -125,8 +125,8 @@ const MultiSelect = (props: MultiSelectProps) => {
 
   const multiValueText = (values) => {
     if (values.length) {
-      return values.map(({ label }) => label).join(", ");
-    } else return "";
+      return values.map(({ label }) => label).join(', ');
+    } else return '';
   };
 
   const handleOpenMenu = () => {
@@ -137,8 +137,8 @@ const MultiSelect = (props: MultiSelectProps) => {
     <>
       <OutsideAlerter handleOutSideClick={handleCancel}>
         <S.MultiSelectContainer
-          data-testid="multi-select-component"
-          className="multi-select-component"
+          data-testid='multi-select-component'
+          className='multi-select-component'
         >
           <S.MultiValueContainer disabled={disabled}>
             <Input
@@ -146,11 +146,11 @@ const MultiSelect = (props: MultiSelectProps) => {
               value={multiValueText(value)}
               icons={{
                 iconRight: {
-                  name: !open ? "chevron_down_outline" : "chevron_up_outline",
+                  name: !open ? 'chevron_down_outline' : 'chevron_up_outline',
                   callback: handleOpenMenu,
                 },
               }}
-              message={!showResetButton ? message : ""}
+              message={!showResetButton ? message : ''}
               placeHolder={placeHolder}
               disabled={disabled}
               inputStatus={status}
@@ -158,7 +158,7 @@ const MultiSelect = (props: MultiSelectProps) => {
             />
             {showResetButton && (
               <S.MultiSelectEmptyButton>
-                <Link variant="primary" size="xs" onClick={handleReset}>
+                <Link variant='primary' size='xs' onClick={handleReset}>
                   Limpiar
                 </Link>
               </S.MultiSelectEmptyButton>

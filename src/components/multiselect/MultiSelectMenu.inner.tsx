@@ -1,7 +1,7 @@
-import React from "react";
-import Button from "../button/Button";
-import MultiSelectOption, { OptionProps } from "./MultiSelectOption.Inner";
-import * as S from "./MultiSelect.styles";
+import React from 'react';
+import Button from '../button/Button';
+import MultiSelectOption, { OptionProps } from './MultiSelectOption.Inner';
+import * as S from './MultiSelect.styles';
 
 type MultiSelectMenuInnerProps = {
   handleApply: () => void;
@@ -44,12 +44,12 @@ const MultiSelectMenu = (props: MultiSelectMenuInnerProps) => {
         <MultiSelectOption onClick={handleOnClick} options={newOptions} />
       </S.MultiSelectOptions>
       <S.MultiSelectButtonGroup>
-        <Button variant="secondary" size="sm" onClick={handleCancel}>
+        <Button variant='secondary' size='sm' onClick={handleCancel}>
           Cancelar
         </Button>
         <Button
-          size="sm"
-          variant="primary"
+          size='sm'
+          variant='primary'
           onClick={handleApply}
           disabled={isApplyButtonDisabled}
         >

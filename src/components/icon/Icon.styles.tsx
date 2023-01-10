@@ -1,19 +1,19 @@
-import styled, { css } from "styled-components";
-import theme from "../../assets/styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../assets/styles/theme';
 
 export interface IconProps {
-  cursor?: "not-allowed" | "pointer" | "default" | "none";
-  modifier?: "regular" | "strong" | "weak" | "inverted";
+  cursor?: 'not-allowed' | 'pointer' | 'default' | 'none';
+  modifier?: 'regular' | 'strong' | 'weak' | 'inverted';
   variant?:
-    | "primary"
-    | "secondary-1"
-    | "secondary-2"
-    | "secondary-3"
-    | "neutral"
-    | "danger"
-    | "warning"
-    | "info"
-    | "success";
+    | 'primary'
+    | 'secondary-1'
+    | 'secondary-2'
+    | 'secondary-3'
+    | 'neutral'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'success';
   disabled?: boolean;
 }
 

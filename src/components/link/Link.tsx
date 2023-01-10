@@ -1,11 +1,11 @@
-import React from "react";
-import * as S from "./Link.styles";
-import Icon from "../icon/Icon";
+import React from 'react';
+import * as S from './Link.styles';
+import Icon from '../icon/Icon';
 
 const defaultProps = {
-  size: "sm",
-  target: "_self",
-  variant: "primary",
+  size: 'sm',
+  target: '_self',
+  variant: 'primary',
 };
 type IconProps = {
   iconLeft: string;
@@ -16,9 +16,9 @@ type IconProps = {
 type LinkProps = {
   href?: string;
   children?: any;
-  size: "xs" | "sm" | "md";
-  target: "_blank" | "_self" | "_parent" | "_top" | "framename";
-  variant: "primary" | "inverted";
+  size: 'xs' | 'sm' | 'md';
+  target: '_blank' | '_self' | '_parent' | '_top' | 'framename';
+  variant: 'primary' | 'inverted';
   icons?: IconProps;
   onClick?: () => void;
 };
@@ -33,12 +33,12 @@ const Link = (props: LinkProps) => {
 
     return (
       <Icon
-        cursor="pointer"
+        cursor='pointer'
         name={name}
         width={iconSizes[size]}
         height={iconSizes[size]}
-        variant={variant === "primary" ? "primary" : "neutral"}
-        modifier={variant === "primary" ? "weak" : "inverted"}
+        variant={variant === 'primary' ? 'primary' : 'neutral'}
+        modifier={variant === 'primary' ? 'weak' : 'inverted'}
       />
     );
   };

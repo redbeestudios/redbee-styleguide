@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import * as S from "./SearchableSelect.styles";
-import Input from "../input/Input";
-import Link from "../link/Link";
-import OutsideAlerter from "../outsidealerter/OutsideAlerter";
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import * as S from './SearchableSelect.styles';
+import Input from '../input/Input';
+import Link from '../link/Link';
+import OutsideAlerter from '../outsidealerter/OutsideAlerter';
 
-const RESET_VALUE = "";
+const RESET_VALUE = '';
 
 type SearchableSelectProps = {
   placeholder?: string;
@@ -16,7 +16,7 @@ type SearchableSelectProps = {
   onlyNumbers?: boolean;
   onClick?: (e) => void;
   disabled?: boolean;
-  inputStatus?: "normal" | "error";
+  inputStatus?: 'normal' | 'error';
   message?: string;
   pattern;
   onKeyDown?: () => void;
@@ -49,9 +49,9 @@ const SearchableSelect = (props: SearchableSelectProps) => {
   } = props;
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showResetButton, setShowResetButton] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
   const [isWrite, setIsWrite] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [open, setOpen] = useState(false);
   const [showPlaceHolder, setShowPlaceHolder] = useState(!!placeholder);
   const inputRef = useRef(null);
@@ -103,7 +103,7 @@ const SearchableSelect = (props: SearchableSelectProps) => {
   };
 
   const handleReset = () => {
-    onChange && onChange("");
+    onChange && onChange('');
     setValue(RESET_VALUE);
     setSelectedOption(RESET_VALUE);
     setShowResetButton(false);
@@ -113,7 +113,7 @@ const SearchableSelect = (props: SearchableSelectProps) => {
   };
 
   const handleOnClick = (option) => {
-    const { value = "" } = option;
+    const { value = '' } = option;
     onClick && onClick(option);
     setIsWrite(false);
     setValue(value);
@@ -145,7 +145,7 @@ const SearchableSelect = (props: SearchableSelectProps) => {
 
   const renderResetButton = () => (
     <S.EmptyButtonWrapper>
-      <Link variant="primary" size="xs" onClick={handleReset}>
+      <Link variant='primary' size='xs' onClick={handleReset}>
         Limpiar
       </Link>
     </S.EmptyButtonWrapper>
@@ -153,23 +153,23 @@ const SearchableSelect = (props: SearchableSelectProps) => {
 
   return (
     <OutsideAlerter handleOutSideClick={handleReset} active={open}>
-      <S.SearchableSelectWrapper data-testid="searchable-select">
+      <S.SearchableSelectWrapper data-testid='searchable-select'>
         <S.InputWrapper>
           <Input
             disabled={disabled}
             inputRef={inputRef}
-            id="searchable-select"
-            type="text"
+            id='searchable-select'
+            type='text'
             label={label}
-            placeHolder={showPlaceHolder ? placeholder : ""}
+            placeHolder={showPlaceHolder ? placeholder : ''}
             onChange={handleOnChange}
             value={value}
-            autocomplete="off"
+            autocomplete='off'
             icons={{
-              iconLeft: "search_outline",
+              iconLeft: 'search_outline',
             }}
             inputStatus={inputStatus}
-            message={!showResetButton ? message : ""}
+            message={!showResetButton ? message : ''}
             pattern={pattern}
             onKeydown={onKeyDown}
             onFocus={handleOnFocus}
@@ -187,10 +187,10 @@ const SearchableSelect = (props: SearchableSelectProps) => {
 
 SearchableSelect.defaultProps = {
   options: [],
-  placeholder: "",
-  label: "",
+  placeholder: '',
+  label: '',
   disabled: false,
-  inputStatus: "normal",
+  inputStatus: 'normal',
 };
 
 export default SearchableSelect;

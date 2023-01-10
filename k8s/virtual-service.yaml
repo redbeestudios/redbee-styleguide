@@ -4,13 +4,13 @@ metadata:
   name: ui-styleguide
 spec:
   hosts:
-    - "prueba1.murmu.test"
+    - 'prueba1.murmu.test'
   gateways:
     - test-gateway-1.default.cluster.local
   http:
     - match:
         - uri:
-            prefix: "/storybook"
+            prefix: '/storybook'
       rewrite:
         uri: /
       route:
@@ -20,7 +20,7 @@ spec:
               number: 81
     - match:
         - uri:
-            prefix: "/styleguide/"
+            prefix: '/styleguide/'
       rewrite:
         uri: /
       route:
@@ -30,13 +30,13 @@ spec:
               number: 80
       corsPolicy:
         allowOrigins:
-          - regex: ".*"
+          - regex: '.*'
         allowMethods:
           - POST
           - GET
           - PUT
           - OPTIONS
         allowHeaders:
-          - "*"
+          - '*'
         exposeHeaders:
-          - "*"
+          - '*'

@@ -7,8 +7,8 @@
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
-    "lint": "eslint src --ext js,ts,tsx",
-    "format": "prettier --write .",
+    "lint": "eslint . --cache-location node_modules/.cache/eslint",
+    "format": "prettier --write \"**/*.+(js|json|css|md|mdx|html|tsx)\"",
     "check-format": "prettier --check .",
     "test": "react-scripts test --coverage  --watchAll=false --env=jsdom",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
@@ -17,6 +17,14 @@
     "build:types": "tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,md,html}": [
+      "prettier --write --loglevel silent"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

@@ -1,7 +1,7 @@
-import React from "react";
-import Label from "../texts/label/Label";
-import Checkbox from "../checkBox/CheckBox";
-import * as S from "./MultiSelect.styles";
+import React from 'react';
+import Label from '../texts/label/Label';
+import Checkbox from '../checkBox/CheckBox';
+import * as S from './MultiSelect.styles';
 
 export type OptionProps = {
   value: string;
@@ -40,10 +40,10 @@ const MultiSelectOption = (props: MultiSelectOptionsInnerProps) => {
           )}
           <S.MultiSelectLabelContainer>
             <Label
-              type="4"
-              variant="neutral"
-              modifier={option.isDisabled ? "weak" : "strong"}
-              weight="regular"
+              type='4'
+              variant='neutral'
+              modifier={option.isDisabled ? 'weak' : 'strong'}
+              weight='regular'
             >
               {option.label}
             </Label>

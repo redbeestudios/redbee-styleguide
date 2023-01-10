@@ -2,12 +2,12 @@ import {
   FocusedInput,
   START_DATE,
   useDatepicker,
-} from "@datepicker-react/hooks";
-import React, { useState } from "react";
-import DatePickerContextInner from "../DatePickerContext.inner";
-import MonthContainer from "./MonthContainer.inner";
-import Icon from "../../icon/Icon";
-import * as S from "../DatePicker.styles";
+} from '@datepicker-react/hooks';
+import React, { useState } from 'react';
+import DatePickerContextInner from '../DatePickerContext.inner';
+import MonthContainer from './MonthContainer.inner';
+import Icon from '../../icon/Icon';
+import * as S from '../DatePicker.styles';
 
 const defaultProps = {
   range: false,
@@ -67,10 +67,10 @@ const DatePickerContainer = (props: DatePickerContainerProps) => {
     >
       <S.NavButton onClick={goToPreviousMonths}>
         <Icon
-          name="chevron_left_outline"
+          name='chevron_left_outline'
           height={20}
           width={20}
-          cursor="pointer"
+          cursor='pointer'
         />
       </S.NavButton>
 
@@ -88,10 +88,10 @@ const DatePickerContainer = (props: DatePickerContainerProps) => {
       </S.DatePickerBody>
       <S.NavButton onClick={goToNextMonths}>
         <Icon
-          name="chevron_right_outline"
+          name='chevron_right_outline'
           height={20}
           width={20}
-          cursor="pointer"
+          cursor='pointer'
         />
       </S.NavButton>
     </DatePickerContextInner.Provider>

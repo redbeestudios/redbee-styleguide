@@ -1,14 +1,14 @@
-import React from "react";
-import * as S from "./Dot.styles";
+import React from 'react';
+import * as S from './Dot.styles';
 
 const defaultProps = {
-  variant: "neutral",
-  modifier: "regular",
+  variant: 'neutral',
+  modifier: 'regular',
 };
 
-type DotProps = {
-  variant?: "regular" | "strong" | "weak" | "inverted";
-  modifier?: "danger" | "info" | "warning" | "success";
+export type DotProps = {
+  modifier?: 'regular' | 'strong' | 'weak' | 'inverted';
+  variant?: 'danger' | 'info' | 'warning' | 'success' | 'neutral';
 };
 
 const Dot = (props: DotProps) => {

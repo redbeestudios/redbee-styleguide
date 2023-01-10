@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
-import * as S from "./CheckBox.styles";
-import Icon from "../icon/Icon";
-import Label from "../texts/label/Label";
+import React, { useEffect, useState } from 'react';
+import * as S from './CheckBox.styles';
+import Icon from '../icon/Icon';
+import Label from '../texts/label/Label';
 
 const defaultProps = {
   isSelectAllCheck: false as boolean,
   checked: false as boolean,
   disabled: false as boolean,
-  size: "sm" as "sm" | "md" | "lg",
-  className: "" as string,
+  size: 'sm' as 'sm' | 'md' | 'lg',
+  className: '' as string,
+  'data-testid': 'checkbox',
 };
 
 type CheckBoxProps = {
@@ -17,7 +18,7 @@ type CheckBoxProps = {
   children?: any;
   isSelectAllCheck?: boolean;
   checked?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
   disabled?: boolean;
 };
@@ -39,9 +40,9 @@ const Checkbox = (props: CheckBoxProps) => {
   const renderText = () => (
     <S.TextWrapper>
       <Label
-        type="2"
-        variant="neutral"
-        modifier={disabled ? "regular" : "strong"}
+        type='2'
+        variant='neutral'
+        modifier={disabled ? 'regular' : 'strong'}
         id={`checkbox-${id}`}
       >
         {children}
@@ -59,20 +60,20 @@ const Checkbox = (props: CheckBoxProps) => {
     <S.Checkbox size={size}>
       <S.CheckboxInput size={size}>
         <input
-          data-testid={`${props["data-testid"]}--checkbox`}
+          data-testid={`${props['data-testid']}--checkbox`}
           id={`checkbox-${id}`}
-          type="checkbox"
+          type='checkbox'
           checked={isChecked}
           disabled={disabled}
           onChange={handleChange}
         />
         <S.CheckboxChecked
-          variant="neutral"
-          modifier={disabled ? "weak" : "inverted"}
+          variant='neutral'
+          modifier={disabled ? 'weak' : 'inverted'}
           size={size}
         >
           <Icon
-            name={isSelectAllCheck ? "parcial_outline" : "done_outline"}
+            name={isSelectAllCheck ? 'parcial_outline' : 'done_outline'}
             width={iconsSizes[size]}
             height={iconsSizes[size]}
           />

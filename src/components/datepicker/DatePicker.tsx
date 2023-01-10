@@ -1,7 +1,7 @@
-import React from "react";
-import DatePickerContainer from "./DatePickerContainer";
-import DayPicker from "./daypicker/Container.inner";
-import MonthPicker from "./monthpicker/Contaniner.inner";
+import React from 'react';
+import DatePickerContainer from './DatePickerContainer';
+import DayPicker from './daypicker/Container.inner';
+import MonthPicker from './monthpicker/Contaniner.inner';
 
 export type FilterAlternativeProps = {
   label?: string;
@@ -33,7 +33,7 @@ const DatePicker = (props: DatePickerProps) => {
         {...props}
         filterAlternatives={filterAlternatives}
         setCurrentFilterAlternative={setCurrentFilterAlternative}
-        dateFormat="LLL"
+        dateFormat='LLL'
       >
         <MonthPicker minBookingDate={minDate} maxBookingDate={maxDate} />
       </DatePickerContainer>

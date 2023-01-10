@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   SelectButton,
   Option,
@@ -7,12 +7,12 @@ import {
   OptionLabel,
   SelectAll,
   SelectAllContent,
-} from "../multiselectablebutton/MultiSelectableButton.styles";
-import useMultiSelect from "../../hooks/UseMultiSelect";
-import { isSameArray } from "../../utils/Utils";
-import { OptionProps } from "../multiselect/MultiSelectOption.Inner";
+} from '../multiselectablebutton/MultiSelectableButton.styles';
+import useMultiSelect from '../../hooks/UseMultiSelect';
+import { isSameArray } from '../../utils/Utils';
+import { OptionProps } from '../multiselect/MultiSelectOption.Inner';
 
-const OPTION_ALL = { label: "Todas", value: "TODAS" };
+const OPTION_ALL = { label: 'Todas', value: 'TODAS' };
 
 type MultiSelectableButtonProps = {
   name: string;
@@ -56,20 +56,20 @@ const MultiSelectableButton = (props: MultiSelectableButtonProps) => {
   return (
     <>
       <SelectAll
-        id="select-all"
+        id='select-all'
         checked={quantitySelected > 0}
         onChange={() => handleOnChange(OPTION_ALL)}
         isSelectAllCheck
-        size="sm"
+        size='sm'
       >
         <SelectAllContent
-          type="2"
-          font="primary"
-          variant="primary"
-          weight="regular"
-          modifier="regular"
+          type='2'
+          font='primary'
+          variant='primary'
+          weight='regular'
+          modifier='regular'
         >
-          {quantitySelected === 0 && "Seleccionar todos"}
+          {quantitySelected === 0 && 'Seleccionar todos'}
           {quantitySelected > 0 && `${quantitySelected} Seleccionados`}
         </SelectAllContent>
       </SelectAll>
@@ -79,7 +79,7 @@ const MultiSelectableButton = (props: MultiSelectableButtonProps) => {
           .map((option: OptionProps) => (
             <Option key={`multiselect-option-${option.value}`}>
               <Input
-                type="checkbox"
+                type='checkbox'
                 id={`multiselect-option-${option.value}`}
                 value={option.value}
                 name={name}

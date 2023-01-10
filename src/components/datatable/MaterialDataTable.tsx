@@ -1,27 +1,27 @@
-import React from "react";
-import * as S from "./MaterialDataTable.styles";
-import Icon from "../icon/Icon";
-import MaterialTable, { Action, Column } from "material-table";
-import { ThemeProvider, createTheme } from "@mui/material";
-import Button from "../button/Button";
-import { actions } from "@storybook/addon-actions";
+import React from 'react';
+import * as S from './MaterialDataTable.styles';
+import Icon from '../icon/Icon';
+import MaterialTable, { Action, Column } from 'material-table';
+import { ThemeProvider, createTheme } from '@mui/material';
+import Button from '../button/Button';
+import { actions } from '@storybook/addon-actions';
 
 // https://material-table.com/#/docs/all-props
 const defaultProps = {
   clickableRows: false,
   pageSize: [5],
   actionsColumnIndex: -1,
-  actionHeader: "Acciones",
-  emptyDataSourceMessage: "No se encontraron resultados",
+  actionHeader: 'Acciones',
+  emptyDataSourceMessage: 'No se encontraron resultados',
 };
 
 type customAction = {
-  iconType: "button" | "icon";
+  iconType: 'button' | 'icon';
   icon?: string;
-  iconAlign?: "center" | "left" | "right" | "none";
+  iconAlign?: 'center' | 'left' | 'right' | 'none';
   children?: any;
-  size?: "sm" | "md" | "lg";
-  variant?: "primary" | "secondary";
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'primary' | 'secondary';
   disabled?: boolean;
   tooltip: string;
   onClick: (event, rowData) => {};
@@ -53,8 +53,8 @@ const MaterialDataTable = (props: MaterialDataTableProps) => {
   const renderIcon = (value: customAction) => {
     return (
       <Icon
-        cursor={value.disabled ? "not-allowed" : "pointer"}
-        variant={value.variant === "primary" ? "neutral" : "primary"}
+        cursor={value.disabled ? 'not-allowed' : 'pointer'}
+        variant={value.variant === 'primary' ? 'neutral' : 'primary'}
         name={value.icon}
         disabled={value.disabled}
       />
@@ -68,7 +68,7 @@ const MaterialDataTable = (props: MaterialDataTableProps) => {
         icon={value.icon}
         iconAlign={value.iconAlign}
         disabled={value.disabled}
-        id={"0"}
+        id={'0'}
       >
         {value.children}
       </Button>
@@ -77,9 +77,9 @@ const MaterialDataTable = (props: MaterialDataTableProps) => {
 
   const renderActionIcon = (value: customAction) => {
     switch (value.iconType) {
-      case "button":
+      case 'button':
         return renderButton(value);
-      case "icon":
+      case 'icon':
         return renderIcon(value);
     }
   };
@@ -101,12 +101,12 @@ const MaterialDataTable = (props: MaterialDataTableProps) => {
     <S.MaterialDataTable
       id={id}
       clickableRows={clickableRows}
-      headerClasses={"headerClasses"}
+      headerClasses={'headerClasses'}
     >
-      <div className={"react-bootstrap-table headerClasses"}>
+      <div className={'react-bootstrap-table headerClasses'}>
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/icon?family=Material+Icons'
         />
         <ThemeProvider theme={defaultMaterialTheme}>
           <MaterialTable
@@ -117,8 +117,8 @@ const MaterialDataTable = (props: MaterialDataTableProps) => {
                 actions: actionHeader,
               },
               pagination: {
-                labelRowsPerPage: "",
-                labelRowsSelect: "",
+                labelRowsPerPage: '',
+                labelRowsSelect: '',
               },
               body: {
                 emptyDataSourceMessage: emptyDataSourceMessage,

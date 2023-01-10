@@ -1,17 +1,17 @@
-import styled, { css } from "styled-components";
-import theme from "../../assets/styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../assets/styles/theme';
 
 export interface DotStylesProps {
-  variant: "regular" | "strong" | "weak" | "inverted";
-  modifier: "danger" | "info" | "warning" | "success" | "neutral";
+  modifier: 'regular' | 'strong' | 'weak' | 'inverted';
+  variant: 'danger' | 'info' | 'warning' | 'success' | 'neutral';
 }
 
 export const Dot = styled.div<DotStylesProps>`
   width: 8px;
   height: 8px;
-  border-radius: ${theme.borderRadius["border-radius-5"]};
-  margin: ${theme.spacing["spacing-1"]} ${theme.spacing["spacing-1"]}
-    ${theme.spacing["spacing-1"]} 0;
+  border-radius: ${theme.borderRadius['border-radius-5']};
+  margin: ${theme.spacing['spacing-1']} ${theme.spacing['spacing-1']}
+    ${theme.spacing['spacing-1']} 0;
   ${({ variant, modifier }) => getVariant(variant, modifier)}
 `;
 

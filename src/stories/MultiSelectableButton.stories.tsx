@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React, { useState } from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import MultiSelectableButton from "../components/multiselectablebutton/MultiSelectableButton";
+import MultiSelectableButton from '../components/multiselectablebutton/MultiSelectableButton';
 
 export default {
-  title: "Example/MultiSelect/MultiSelectableButton",
+  title: 'Example/MultiSelect/MultiSelectableButton',
   component: MultiSelectableButton,
 } as ComponentMeta<typeof MultiSelectableButton>;
 
@@ -17,33 +17,33 @@ const options = [
     ...MultiSelectableButton.OPTION_ALL,
   },
   {
-    value: "visa",
-    label: "Visa",
+    value: 'visa',
+    label: 'Visa',
   },
   {
-    value: "mastercard",
-    label: "Mastercard",
+    value: 'mastercard',
+    label: 'Mastercard',
   },
   {
-    value: "amex",
-    label: "Amex",
+    value: 'amex',
+    label: 'Amex',
   },
   {
-    value: "visa2",
-    label: "Visa 2",
+    value: 'visa2',
+    label: 'Visa 2',
   },
   {
-    value: "visa3",
-    label: "Visa 3",
+    value: 'visa3',
+    label: 'Visa 3',
   },
   {
-    value: "visa4",
-    label: "Visa 4",
+    value: 'visa4',
+    label: 'Visa 4',
   },
 ];
 
 export const Normal = Template.bind({});
 Normal.args = {
-  name: "name",
+  name: 'name',
   options: options,
 };

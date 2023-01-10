@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from 'react';
 
 type OutsideAlerterProps = {
   handleOutSideClick: () => void;
@@ -8,11 +8,11 @@ type OutsideAlerterProps = {
 };
 
 const hasParentBySelector = (el) => (selector) => {
-  let isIDSelector = selector.indexOf("#") === 0;
-  if (selector.indexOf(".") === 0 || selector.indexOf("#") === 0) {
+  let isIDSelector = selector.indexOf('#') === 0;
+  if (selector.indexOf('.') === 0 || selector.indexOf('#') === 0) {
     selector = selector.slice(1);
   }
-  while (el && el.tagName !== "BODY") {
+  while (el && el.tagName !== 'BODY') {
     if (isIDSelector) {
       if (el.id === selector) {
         return true;
@@ -42,10 +42,10 @@ const useOutsideAlerter = (ref, outSideClickAction, excludeList) => {
         }
       };
 
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
 
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }
   }, [ref]);

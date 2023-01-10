@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import * as S from "./SelectableChips.styles";
-import Chip from "../chip/Chip";
-import Checkbox from "../checkBox/CheckBox";
-import P from "../texts/p/P";
+import React, { useState, useEffect } from 'react';
+import * as S from './SelectableChips.styles';
+import Chip from '../chip/Chip';
+import Checkbox from '../checkBox/CheckBox';
+import P from '../texts/p/P';
 
 type OptionProps = {
   active: boolean;
@@ -11,7 +11,7 @@ type OptionProps = {
 };
 
 type SelectableChipProps = {
-  direction: "column" | "row";
+  direction: 'column' | 'row';
   disabled: boolean;
   multiSelect: boolean;
   selectAll: boolean;
@@ -54,15 +54,15 @@ const SelectableChips = (props: SelectableChipProps) => {
   const SelectAll = () => {
     return (
       <Checkbox
-        id="select-all"
+        id='select-all'
         checked={quantitySelected > 0}
         onChange={disabled ? undefined : handleSelectAll}
         isSelectAllCheck
-        size="sm"
+        size='sm'
         disabled={disabled}
       >
-        <P variant="neutral" modifier="strong" type="2" align="left">
-          {quantitySelected === 0 && "Seleccionar todos"}
+        <P variant='neutral' modifier='strong' type='2' align='left'>
+          {quantitySelected === 0 && 'Seleccionar todos'}
           {quantitySelected === 1 && `${quantitySelected} Seleccionado`}
           {quantitySelected > 1 && `${quantitySelected} Seleccionados`}
         </P>
@@ -97,7 +97,7 @@ const SelectableChips = (props: SelectableChipProps) => {
 };
 
 SelectableChips.defaultProps = {
-  direction: "row",
+  direction: 'row',
   multiSelect: false,
   selectAll: false,
   disabled: false,

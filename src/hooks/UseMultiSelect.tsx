@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { OptionProps } from "../components/multiselect/MultiSelectOption.Inner";
+import { useState } from 'react';
+import { OptionProps } from '../components/multiselect/MultiSelectOption.Inner';
 
 const UseMultiSelect = (
   options: Array<OptionProps>,
